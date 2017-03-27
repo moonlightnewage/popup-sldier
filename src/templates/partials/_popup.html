@@ -1,0 +1,73 @@
+{% from "data/data.html" import tabs %}
+  
+<div class="popup-overlay">
+
+        {% for tab in tabs %}
+        <!--begin slider-->
+        <div class="popup js-popup">
+            
+            <button class="popup__btn js-popup-close">
+                {{ mixins.icon('close') }}
+            </button>
+            
+            <div class="popup-slider owl-carousel js-popup-slider">
+            
+                {% for item in tab.content %}
+                <!--begin slide-->
+                <div class="popup-slider__slide">
+                    <div class="popup-slider__col-left">
+                       
+                        <!--begin title-->
+                        <h2 class="slider-ttl">
+                            <span>Modal</span>
+                            <span>{{ item.title }}</span>
+                        </h2>
+                        <!--end title-->
+
+                        <!--begin list-->
+                        <ul class="popup-slider__list">
+
+                            {% for el in item.popup.list %}
+                            <li class="js-popup-list-item">{{ el }}</li>
+                            {% endfor %}
+
+                        </ul>
+                        <!--end list-->
+                        
+                        <!--begin desc-->
+                        <div class="slider-desc">{{ item.desc }}</div>
+                        <!--end desc-->
+
+                        <!--begin meta-->
+                        <div class="slider-meta">
+                            <span class="slider-date">{{ item.date }}</span>
+                            <span class="slider-info">{{ item.info }}</span>
+                        </div>
+                        <!--end meta-->
+                        
+                    </div>
+                    <div class="popup-slider__col-right">
+                        <div class="popup-slider__img" style="background-image: url({{ item.popup.image }})"></div>
+                        <div class="popup-slider__page"></div>
+                    </div>
+
+                </div>
+                <!--end slide-->
+                {% endfor %}
+        
+            </div>
+            
+            <!--begin controls-->
+            <button class="slider-control slider-control_popup slider-control_l js-control-prev">
+                {{ mixins.icon('left') }}
+            </button>
+            <button class="slider-control slider-control_popup slider-control_r js-control-next">
+                {{ mixins.icon('right') }}
+            </button>
+            <!--end controls-->
+                
+        </div>
+        {% endfor %}
+        <!--end slider-->
+        
+</div>

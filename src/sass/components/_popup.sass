@@ -1,0 +1,46 @@
+.popup
+    display: none
+    padding: 20px
+    +vcenter
+    &__btn
+        position: absolute
+        right: 0
+        top: 0
+        background-color: transparent
+        .icon
+            width: 20px
+            height: 20px
+            fill: #41b8ce
+.popup-slider
+    background-color: #fff
+    margin: 0 auto
+    max-width: 910px
+    &__img
+        width: 400px
+        height: 400px
+        float: right
+    &__slide
+        font-size: 0
+    &__col-left
+        display: inline-block
+        vertical-align: middle
+        width: 50%
+        font-size: 16px
+        padding-left: 50px
+    &__col-right
+        display: inline-block
+        vertical-align: middle
+        width: 50%
+.popup-overlay.is-active
+    background-color: rgba(0,0,0,.5)
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 1000
+.slider-control_popup
+    background: #41b8ce
+    z-index: 1001
+    .icon
+        fill: #fff

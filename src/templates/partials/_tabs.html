@@ -1,0 +1,74 @@
+{% from "data/data.html" import tabs %}
+
+<section class="tabs">
+    
+    <!--begin menu-->
+    <div class="tabs__menu">
+        {% for tab in tabs %}
+        <button class="tabs__item js-tab-link">{{ tab.link }}</button>
+        {% endfor %}
+    </div>
+    <!--end menu-->
+    
+    <!--begin content-->
+    <div class="tabs__content">
+        
+        {% for tab in tabs %}
+        
+        <div class="tabs__in js-tab-content">
+        
+            <!--begin slider-->
+            <div class="tab-slider owl-carousel js-tab-slider">
+
+                {% for el in tab.content %}
+                <!--begin slide-->
+                <div class="tab-slider__slide">
+
+                    <!--begin image-->
+                    <div class="tab-slider__img" style="background-image: url({{ el.image }})" data-el="{{ el.popup.image }}"></div>
+                    <!--end image-->
+
+                    <!--begin text-->
+                    <div class="slider-txt">
+
+                        <h1 class="slider-ttl tab-slider__ttl">{{ el.title }}</h1>
+                        <p class="slider-desc tab-slider__desc">{{ el.desc }}</p>
+
+                        <!--begin meta-->
+                        <div class="slider-meta">
+                            <span class="slider-date">{{ el.date }}</span>
+                            <span class="slider-info">{{ el.info }}</span>
+                        </div>
+                        <!--end meta-->
+
+                        <!--begin more-->
+                        <button class="tab-slider__btn js-popup-open">More</button>
+                        <!--end more-->
+
+                    </div>
+                    <!--end text-->
+                </div>
+                <!--end slide-->
+                {% endfor %}
+
+            </div>
+            <!--end slider-->
+        
+            <!--begin controls-->
+            <button class="slider-control slider-control_l js-control js-control-prev">
+                {{ mixins.icon('left') }}
+            </button>
+            <button class="slider-control slider-control_r js-control js-control-next">
+                {{ mixins.icon('right') }}
+            </button>
+            <!--end controls-->
+        
+        
+        </div>
+        {% endfor %}
+        
+    </div>
+    <!--end content-->
+    
+    
+</section>
