@@ -18,11 +18,11 @@
         <div class="tabs__in js-tab-content">
         
             <!--begin slider-->
-            <div class="tab-slider owl-carousel js-tab-slider">
+            <div class="tab-slider js-tab-slider">
 
                 {% for el in tab.content %}
                 <!--begin slide-->
-                <div class="tab-slider__slide">
+                <div class="tab-slider__slide js-tab-slide">
 
                     <!--begin image-->
                     <div class="tab-slider__img" style="background-image: url({{ el.image }})" data-el="{{ el.popup.image }}"></div>
