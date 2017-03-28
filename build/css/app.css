@@ -131,7 +131,6 @@ html {
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -267,7 +266,6 @@ body {
 .slider-control {
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   border: 1px solid #41b8ce;
@@ -347,7 +345,6 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1000;
@@ -361,7 +358,7 @@ body {
 .popup-slider {
   background-color: #fff;
   margin: 0 auto;
-  max-width: 910px;
+  width: 910px;
 }
 
 .popup-slider__img {

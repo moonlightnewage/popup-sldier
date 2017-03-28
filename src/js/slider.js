@@ -2,6 +2,8 @@ import "slick-carousel";
 
 export default () => {
     
+    // tab sliders
+    
     $('.js-tab-content[data-target="0"] .js-tab-slider').slick({
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -30,6 +32,8 @@ export default () => {
         
         initTabSliderBtn.off('.init');
     });
+    
+    // popup sliders
     
     createPages('.js-popup-slider');
     
@@ -65,7 +69,14 @@ export default () => {
         let dom = '<span class="js-current-slide"></span> / <span class="js-max-slide"></span>';
         
         for(let i = 0; i < sliders.length; i++) {
-            $(sliders[i]).children().find('.js-slide-pages').append(dom);
+            let children = $(sliders[i]).children();
+            children.find('.js-slide-pages').append(dom);
+            
+            for(let j = 0; j < children.length; j++) {
+                $(children[j]).find('.js-current-slide').text(j+1);
+                $(children[j]).find('.js-max-slide').text(children.length);
+            }
+            
         }
     }
     
