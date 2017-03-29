@@ -2,3 +2,4 @@ ProjectTitle: tabs
 
 PageList:
 - file: index.html
+  ready: 100%

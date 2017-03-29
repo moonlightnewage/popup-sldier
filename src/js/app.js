@@ -11,15 +11,19 @@ import sliders from './slider.js';
 import modal from './modal.js';
 
 $(document).ready(function() {
+    
     new Tab({
         link: '.js-tab-link',
         content: '.js-tab-content'
     });
+    
     modal({
         modal: '.js-popup',
         trigger: '.js-popup-open'
     })
+    
     sliders();
+    
 });
 
 
